@@ -1,13 +1,16 @@
-from functions.get_files_info import get_files_info
+from functions.get_file_contents import get_file_content
 
-print("Result for current directory:")
-print(get_files_info("calculator", "."))
+def test():
+    result = get_file_content("calculator", "lorem.txt")
+    
+    result = get_file_content("calculator", "main.py")
+    print(result)
 
-print("Result for 'pkg' directory:")
-print(get_files_info("calculator", "pkg"))
+    result = get_file_content("calculator", "pkg/calculator.py")
+    print(result)
 
-print("Result for '/bin' directory:")
-print(get_files_info("calculator", "/bin"))
+    result = get_file_content("calculator", "/bin/cat")
+    print(result)
 
-print("Result for '../' directory:")
-print(get_files_info("calculator", "../"))
+if __name__ == "__main__":
+    test()
